@@ -11,11 +11,11 @@ class App(ctk.CTk):
 
     def data_handler(self):
         self.data = read_data()
-        
+
     def UX_handler(self):
         self.Inter,self.Inter_light = fonts_variable()
         window_config(self)
-
+        UI(self)
     def start(self):
         self.mainloop()
         

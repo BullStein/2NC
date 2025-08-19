@@ -1,6 +1,5 @@
-import customtkinter as ctk
-from pathlib import Path
-import json
+from config.UX.screen.UI.terms import *
+from config.data.data_manager import * 
 
 def window_config(app):
     title(app)
@@ -15,3 +14,8 @@ def window_size(app=None):
     width = data["data"]["window"]["window_width"]
 
     app.geometry(f"{width}x{height}")
+
+def UI(app):
+    data = read_data()
+    if data["data"]["user"]["terms"] == "not accepted":
+        terms(app)

@@ -3,9 +3,20 @@ import os
 
 new_data = {
     "data": {
+        "user": {
+            "theme" : "light",
+            "terms" : "not accepted"
+        },
         "window": {
-            "window_height": 500,
-            "window_width": 1000
+            "window_height": 750,
+            "window_width": 1500
+        },
+        "server history":{
+            
+        },
+
+        "names history" : {
+
         }
     }
 }
