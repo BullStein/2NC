@@ -4,7 +4,7 @@ import os
 new_data = {
     "data": {
         "user": {
-            "theme" : "light",
+            "theme" : "purple",
             "terms" : "not accepted"
         },
         "window": {

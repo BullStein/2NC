@@ -38,6 +38,7 @@ def handle_theme():
     theme_handlers = {
         "light": light_theme,
         "purple": purple_theme
+        # "dark" : dark_theme
     }
     
     if theme_name in theme_handlers:
