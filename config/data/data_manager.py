@@ -8,8 +8,8 @@ new_data = {
             "terms" : "not accepted"
         },
         "window": {
-            "window_height": 750,
-            "window_width": 1500
+            "window_height": 900,
+            "window_width": 1800
         },
         "server history":{
             

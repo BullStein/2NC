@@ -12,8 +12,14 @@ def window_size(app=None):
     data = app.data #! data getted of the data handler function on the new object main app
     height = data["data"]["window"]["window_height"]
     width = data["data"]["window"]["window_width"]
+    
+    screen_width = app.winfo_screenwidth()
+    screen_height = app.winfo_screenheight()
 
-    app.geometry(f"{width}x{height}")
+    x = (screen_width - width) // 2
+    y = (screen_height - height) // 2
+
+    app.geometry(f"{width}x{height}+{x}+{y}")
 
 def UI(app):
     data = read_data()

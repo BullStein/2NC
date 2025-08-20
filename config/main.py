@@ -13,8 +13,8 @@ class App(ctk.CTk):
         self.data = read_data()
 
     def UX_handler(self):
-        self.Inter,self.Inter_light = fonts_variable()
         window_config(self)
+        self.config(bg=app_background)
         UI(self)
     def start(self):
         self.mainloop()
