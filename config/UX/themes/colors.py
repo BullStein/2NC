@@ -12,8 +12,8 @@ light_purple_relative = "#787899"
 light_blackish = "#333630"
 
 #? text colors
-white = light_blackish
-black = milkish_white
+black = light_blackish
+white = milkish_white
 purple = light_purple
 
 #? font colors
@@ -28,9 +28,12 @@ ligh_blackish_entry = "#222420"
 light_purple_entry = "#7B7C9F"
 
 
-#? about list: 1-background 2-container color 3- container darker color 4-container shadow 5-container shadow relative  
-#? 6-placholder button 7-deny button 8-agree button
-
+#? about list: 0-background 0-container color 1- container darker color 2-container shadow 3-container shadow relative  
+#? 4-placholder button 5-deny button 6-agree button
+def read_theme():
+    data = read_data()
+    theme_name = data["data"]["user"]["theme"]
+    return
 def handle_theme():
     data = read_data()
     theme_name = data["data"]["user"]["theme"]
@@ -52,7 +55,8 @@ def light_theme():
         milkish_white_relative,
         light_blackish,
         ligh_blackish_entry,
-        accept_button
+        accept_button,
+        black
     ]
     return app_background, background_colors, font_colors
 
@@ -64,6 +68,7 @@ def purple_theme():
         light_blackish,
         ligh_blackish_entry,
         accept_button,
-        light_purple  
+        light_purple,
+        white 
     ]
     return app_background, background_colors, font_colors
