@@ -15,7 +15,7 @@ def upper_box(app, main_box):
     upper_box.grid_propagate(False)
 
     theme_box = ctk.CTkFrame(
-        upper_box, height=200, width=300,
+        upper_box, height=170, width=300,
         bg_color=background_colors[0],
         fg_color=background_colors[1],
         corner_radius=30
@@ -58,17 +58,15 @@ def upper_box(app, main_box):
         font=(font_bold, 25),
         text_color=background_colors[-1]
     )
-    theme_label.pack(pady=(0,0), padx=0)
+    theme_label.pack(pady=(10,0), padx=0)
     
     radio_var = ctk.StringVar(value=read_theme())
 
     def theme_modify(app=app):
         change_theme(app, radio_var.get())
-
-    theme_radios = ctk.CTkScrollableFrame(theme_box, fg_color=background_colors[2], width=180)
-    theme_radios.pack()
-    theme_radios.configure(height=50)   # agora o height funciona
-
+    theme_getter(radio_var)
+    theme_radios = ctk.CTkScrollableFrame(theme_box, fg_color=background_colors[2], width=200,height=0)
+    theme_radios.pack(pady=(10))
 
     theme_radio_dark = ctk.CTkRadioButton(theme_radios, text="DARK", variable=radio_var, value="dark", command=theme_modify
     ,font=(font_light,15),text_color=background_colors[-1])

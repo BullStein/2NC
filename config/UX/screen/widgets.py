@@ -1,3 +1,5 @@
+from config.data.main import *
+
 def ycentralize(parent_container,current_container):
     value = (parent_container._current_height - current_container._current_height) // 2
     return value
@@ -15,3 +17,7 @@ def xcentralize(parent_container, *items):
 
 def items_return(parent_container):
     return len(list(parent_container.winfo_children()))
+def theme_getter(radio_var):
+    data = read_data()
+    value_taken = data["data"]["user"]["theme"]
+    return radio_var.set(value_taken)
