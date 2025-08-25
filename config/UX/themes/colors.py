@@ -11,6 +11,17 @@ light_purple = "#999ac6"
 light_purple_relative = "#787899"
 light_blackish = "#333630"
 
+#? bakcground colors red
+bright_red = "#BB0A21"
+wine_red = "#9B0E21"
+weak_blue = "#4B88A2"
+
+#? background colors pink
+sakura_pink = "#EFC7E5"
+pink = "#EEB1D5"
+black_pink = "#CD9FBA"
+weak_pink = "#A87F98"
+
 #? text colors
 black = light_blackish
 white = milkish_white
@@ -26,6 +37,11 @@ accept_button = "#36376D"
 #? entry camps colors
 ligh_blackish_entry = "#222420"
 light_purple_entry = "#7B7C9F"
+
+
+#? button placheholder themes
+light_theme_radio = milkish_white
+light_theme_radio_border = milkish_white_relative
 
 
 #? about list: 0-background 0-container color 1- container darker color 2-container shadow 3-container shadow relative  
@@ -72,3 +88,16 @@ def purple_theme():
         white 
     ]
     return app_background, background_colors, font_colors
+def red_theme():
+    font_colors = font_colors_list
+    app_background = bright_red
+    background_colors = [
+        wine_red,
+        light_blackish,
+        ligh_blackish_entry,
+        accept_button,
+        white
+    ]
+def radio_colors():
+    first_radio = [milkish_white,milkish_white_relative]
+    second_radio = []

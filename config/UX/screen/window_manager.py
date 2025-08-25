@@ -1,4 +1,4 @@
-from config.UX.screen.UI.terms import *
+from config.UX.screen.UI.home import *
 from config.data.data_manager import * 
 
 def window_config(app):
