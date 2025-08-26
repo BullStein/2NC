@@ -1,5 +1,7 @@
 import customtkinter as ctk
 from config.UX.themes.theme_handler import *
+from config.UX.screen.widgets import * 
+from config.UX.themes.theme_handler import update_container_colors
 
 def left_box(app,parent_box):
     app.left_box_frame = ctk.CTkFrame(parent_box, fg_color=app_background)
@@ -8,6 +10,23 @@ def left_box(app,parent_box):
 
     app.left_box_header = ctk.CTkFrame(app.left_box_frame, height=50, width=300, fg_color=background_colors[0], corner_radius=30)
     app.left_box_server_frame = ctk.CTkFrame(app.left_box_frame, height=600, width=300, fg_color=background_colors[0], corner_radius=40)
+    
+    app.user_box = ctk.CTkFrame(
+        app.left_box_server_frame,height=150,width=280,fg_color=background_colors[1],corner_radius=30
+        )
+    app.user_box.pack(
+        pady=(centralize(app.left_box_server_frame,app.user_box,'y'))
+        )
+    app.user_box.pack_propagate(False)
+    
+    app.user_box_label = ctk.CTkLabel(app.user_box,text="NICKNAME",font=(font_bold,40),text_color=background_colors[-1])
+    app.user_box_label.pack()
+
+    app.user_box_entry = ctk.CTkEntry(
+        app.user_box,placeholder_text="insert a nick",fg_color=background_colors[2],border_color=background_colors[1],
+        font=(font_light,20), corner_radius=20,height=40,width=230,text_color=background_colors[-1]
+    )
+    app.user_box_entry.pack()
 
     app.left_box_header.pack()
     app.left_box_header.pack_propagate(False)
@@ -21,13 +40,29 @@ def left_box(app,parent_box):
 
     radio_var = ctk.StringVar(value=read_theme())
 
-    app.theme_radio_dark = ctk.CTkRadioButton(app.left_box_themes, text="", variable=radio_var, value="dark", font=(font_light, 15), text_color=background_colors[-1], width=10)
+    def on_theme_change():
+        change_theme(app, radio_var.get())
+
+    app.theme_radio_dark = ctk.CTkRadioButton(
+        app.left_box_themes, text="", variable=radio_var, value="red",
+        font=(font_light, 15), text_color=background_colors[-1], width=10,
+        command=on_theme_change  
+    )
     app.theme_radio_dark.grid(row=0, column=0, padx=0, pady=10)
 
-    app.theme_radio_light = ctk.CTkRadioButton(app.left_box_themes, text="", variable=radio_var, value="light", font=(font_light, 15), text_color=background_colors[-1], width=10)
+    app.theme_radio_light = ctk.CTkRadioButton(
+        app.left_box_themes, text="", variable=radio_var, value="light",
+        font=(font_light, 15), text_color=background_colors[-1], width=10,
+        command=on_theme_change 
+    )
     app.theme_radio_light.grid(row=0, column=1, padx=0, pady=10)
 
-    app.theme_radio_purple = ctk.CTkRadioButton(app.left_box_themes, text="", variable=radio_var, value="purple", font=(font_light, 15), text_color=background_colors[-1], width=10)
+    app.theme_radio_purple = ctk.CTkRadioButton(
+        app.left_box_themes, text="", variable=radio_var, value="purple",
+        font=(font_light, 15), text_color=background_colors[-1], width=10,
+        command=on_theme_change,border_color=
+    )
     app.theme_radio_purple.grid(row=0, column=2, padx=0, pady=10)
 
     app.left_box_themes.grid_columnconfigure((0,1,2), weight=1)
+    update_container_colors(app, background_colors, font_colors, font_bold, font_light)

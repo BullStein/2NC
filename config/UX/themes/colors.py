@@ -19,9 +19,9 @@ weak_blue = "#4B88A2"
 #? background colors pink
 sakura_pink = "#EFC7E5"
 pink = "#EEB1D5"
-black_pink = "#CD9FBA"
+lolipop_pink = "#CD9FBA"
 weak_pink = "#A87F98"
-
+black_pink = "#4C3B4D" # BLACK PINK!?
 #? text colors
 black = light_blackish
 white = milkish_white
@@ -49,14 +49,15 @@ light_theme_radio_border = milkish_white_relative
 def read_theme():
     data = read_data()
     theme_name = data["data"]["user"]["theme"]
-    return
+    return theme_name
 def handle_theme():
     data = read_data()
     theme_name = data["data"]["user"]["theme"]
     
     theme_handlers = {
         "light": light_theme,
-        "purple": purple_theme
+        "purple": purple_theme,
+        "red" : red_theme
         # "dark" : dark_theme
     }
     
@@ -72,7 +73,7 @@ def light_theme():
         light_blackish,
         ligh_blackish_entry,
         accept_button,
-        black
+        white
     ]
     return app_background, background_colors, font_colors
 
@@ -98,6 +99,8 @@ def red_theme():
         accept_button,
         white
     ]
+    return app_background, background_colors, font_colors
+
 def radio_colors():
     first_radio = [milkish_white,milkish_white_relative]
     second_radio = []

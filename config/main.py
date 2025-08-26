@@ -1,6 +1,6 @@
 from config.UX.main import *
 from config.data.main import *
-
+    
 load_fonts(ctk)
 
 class App(ctk.CTk):
