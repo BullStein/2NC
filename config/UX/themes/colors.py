@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from config.data.main import *
 #not a big fan of colors when the subject is minimalist chats
-#? background colors
+#? background colors light
 
 milkish_white = "#E8EBE4"
 milkish_white_relative = "#B7BBB3"
@@ -22,6 +22,12 @@ pink = "#EEB1D5"
 lolipop_pink = "#CD9FBA"
 weak_pink = "#A87F98"
 black_pink = "#4C3B4D" # BLACK PINK!?
+
+#? background colors dark
+gray = "#6A706E"
+rock_gray = "#575955"
+light_blackish = light_blackish
+
 #? text colors
 black = light_blackish
 white = milkish_white
@@ -31,17 +37,14 @@ purple = light_purple
 font_colors_list = [white,black,purple]
 
 #? button colors
-accept_button = "#36376D"
-
-
+accept_button_purple = "#36376D"
+accept_button_dark = "#E8EBE4"
+accept_button_light = "#5B5D58"
+accept_button_red = "#7B0918"
 #? entry camps colors
 ligh_blackish_entry = "#222420"
 light_purple_entry = "#7B7C9F"
 
-
-#? button placheholder themes
-light_theme_radio = milkish_white
-light_theme_radio_border = milkish_white_relative
 
 
 #? about list: 0-background 0-container color 1- container darker color 2-container shadow 3-container shadow relative  
@@ -57,8 +60,8 @@ def handle_theme():
     theme_handlers = {
         "light": light_theme,
         "purple": purple_theme,
-        "red" : red_theme
-        # "dark" : dark_theme
+        "red" : red_theme,
+        "dark" : dark_theme
     }
     
     if theme_name in theme_handlers:
@@ -72,11 +75,10 @@ def light_theme():
         milkish_white_relative,
         light_blackish,
         ligh_blackish_entry,
-        accept_button,
+        accept_button_light,
         white
     ]
     return app_background, background_colors, font_colors
-
 def purple_theme():
     font_colors = font_colors_list
     app_background = light_purple
@@ -84,7 +86,7 @@ def purple_theme():
         light_purple_relative,
         light_blackish,
         ligh_blackish_entry,
-        accept_button,
+        accept_button_purple,
         light_purple,
         white 
     ]
@@ -96,11 +98,25 @@ def red_theme():
         wine_red,
         light_blackish,
         ligh_blackish_entry,
-        accept_button,
+        accept_button_red,
+        white
+    ]
+    return app_background, background_colors, font_colors
+def dark_theme():
+    font_colors = font_colors_list
+    app_background = gray
+    background_colors = [
+        rock_gray,
+        light_blackish,
+        ligh_blackish_entry,
+        accept_button_dark,
         white
     ]
     return app_background, background_colors, font_colors
 
 def radio_colors():
-    first_radio = [milkish_white,milkish_white_relative]
-    second_radio = []
+    first_radio = [milkish_white_relative,milkish_white]
+    second_radio = [gray,rock_gray]
+    third_radio = [light_purple_relative,light_purple]
+    fourth_radio = [wine_red,bright_red]
+    return first_radio,second_radio,third_radio,fourth_radio

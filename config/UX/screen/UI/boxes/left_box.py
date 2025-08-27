@@ -42,27 +42,42 @@ def left_box(app,parent_box):
 
     def on_theme_change():
         change_theme(app, radio_var.get())
+    
+    app.theme_radio_light = ctk.CTkRadioButton(
+            app.left_box_themes, text="", variable=radio_var, value="light",
+            font=(font_light, 15), text_color=background_colors[-1], width=10,
+            command=on_theme_change, border_color=light_radio[0], fg_color=light_radio[1],
+            radiobutton_height=30, radiobutton_width=30,border_width_unchecked=5,border_width_checked=7,
+            hover_color="#C6C8C2"
+        )
+    app.theme_radio_light.grid(row=0, column=1, padx=0, pady=13)
 
     app.theme_radio_dark = ctk.CTkRadioButton(
-        app.left_box_themes, text="", variable=radio_var, value="red",
-        font=(font_light, 15), text_color=background_colors[-1], width=10,
-        command=on_theme_change  
-    )
-    app.theme_radio_dark.grid(row=0, column=0, padx=0, pady=10)
+            app.left_box_themes, text="", variable=radio_var, value="dark",
+            font=(font_light, 15), text_color=background_colors[-1], width=10,
+            command=on_theme_change, border_color=dark_radio[0], fg_color=dark_radio[0],
+            radiobutton_height=30, radiobutton_width=30,border_width_unchecked=5,border_width_checked=7,
+            hover_color="#4F5453"
+        )
+    app.theme_radio_dark.grid(row=0, column=2, padx=0, pady=13)
 
-    app.theme_radio_light = ctk.CTkRadioButton(
-        app.left_box_themes, text="", variable=radio_var, value="light",
-        font=(font_light, 15), text_color=background_colors[-1], width=10,
-        command=on_theme_change 
-    )
-    app.theme_radio_light.grid(row=0, column=1, padx=0, pady=10)
+    app.theme_radio_red = ctk.CTkRadioButton(
+            app.left_box_themes, text="", variable=radio_var, value="red",
+            font=(font_light, 15), text_color=background_colors[-1], width=10,
+            command=on_theme_change, border_color=red_radio[1], fg_color=red_radio[1],
+            radiobutton_height=30, radiobutton_width=30,border_width_unchecked=5,border_width_checked=7,
+            hover_color="#990B1E"
+        )
+    app.theme_radio_red.grid(row=0, column=3, padx=0, pady=13)
 
     app.theme_radio_purple = ctk.CTkRadioButton(
-        app.left_box_themes, text="", variable=radio_var, value="purple",
-        font=(font_light, 15), text_color=background_colors[-1], width=10,
-        command=on_theme_change,border_color=
-    )
-    app.theme_radio_purple.grid(row=0, column=2, padx=0, pady=10)
+            app.left_box_themes, text="", variable=radio_var, value="purple",
+            font=(font_light, 15), text_color=background_colors[-1], width=10,
+            command=on_theme_change, border_color=purple_radio[0], fg_color=purple_radio[1],
+            radiobutton_height=30, radiobutton_width=30,border_width_unchecked=5,border_width_checked=7,
+            hover_color="#70718F"
+        )
+    app.theme_radio_purple.grid(row=0, column=4, padx=0, pady=13)
 
-    app.left_box_themes.grid_columnconfigure((0,1,2), weight=1)
+    app.left_box_themes.grid_columnconfigure((1,2,3,4), weight=1)
     update_container_colors(app, background_colors, font_colors, font_bold, font_light)
