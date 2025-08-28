@@ -24,7 +24,7 @@ def left_box(app,parent_box):
 
     app.user_box_entry = ctk.CTkEntry(
         app.user_box,placeholder_text="insert a nick",fg_color=background_colors[2],border_color=background_colors[1],
-        font=(font_light,20), corner_radius=20,height=40,width=230,text_color=background_colors[-1]
+        font=(font_light,20), corner_radius=20,height=40,width=230,text_color=background_colors[-1],placeholder_text_color=font_colors[-1]
     )
     app.user_box_entry.pack()
 
@@ -79,5 +79,14 @@ def left_box(app,parent_box):
         )
     app.theme_radio_purple.grid(row=0, column=4, padx=0, pady=13)
 
-    app.left_box_themes.grid_columnconfigure((1,2,3,4), weight=1)
+    app.theme_radio_mint = ctk.CTkRadioButton(
+            app.left_box_themes, text="", variable=radio_var, value="mint",
+            font=(font_light, 15), text_color=background_colors[-1], width=10,
+            command=on_theme_change, border_color=mint_radio[0], fg_color=mint_radio[1],
+            radiobutton_height=30, radiobutton_width=30,border_width_unchecked=5,border_width_checked=7,
+            hover_color="#70718F"
+        )
+    app.theme_radio_mint.grid(row=0, column=5, padx=0, pady=13)
+
+    app.left_box_themes.grid_columnconfigure((1,2,3,4,5), weight=1)
     update_container_colors(app, background_colors, font_colors, font_bold, font_light)

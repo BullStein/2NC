@@ -4,7 +4,7 @@ import time
 
 app_background, background_colors, font_colors = handle_theme()
 font_bold, font_light = fonts_variable()
-light_radio,dark_radio,purple_radio,red_radio = radio_colors()
+light_radio,dark_radio,purple_radio,red_radio,mint_radio = radio_colors()
 
 def get_colors():
     global app_background, background_colors, font_colors, font_bold, font_light
