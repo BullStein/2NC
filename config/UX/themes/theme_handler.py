@@ -22,8 +22,10 @@ def change_theme(app, theme):
     app.configure(fg_color=app_background)
     
     update_container_colors(app, background_colors, font_colors, font_bold, font_light)
-
-def updata_left_box_container_colors(app, background_colors, font_colors, font_bold, font_light):
+def update_logo_box_container_colors(app, background_colors):
+    if hasattr(app,'logo'):
+        app.logo.configure(fg_color=background_colors[0],bg_color=app_background)
+def update_left_box_container_colors(app, background_colors, font_colors, font_bold, font_light):
     if hasattr(app, 'left_box_frame'):
         app.left_box_frame.configure(fg_color=app_background,bg_color=app_background)
 
@@ -56,7 +58,7 @@ def updata_left_box_container_colors(app, background_colors, font_colors, font_b
     if hasattr(app, 'theme_radio_purple'):
         app.theme_radio_purple.configure(text_color=background_colors[-1])
 
-def updata_right_box_container_colors(app, background_colors, font_colors, font_bold, font_light):
+def update_right_box_container_colors(app, background_colors, font_colors, font_bold, font_light):
     if hasattr(app, 'right_box_frame'):
         app.right_box_frame.configure(bg_color=app_background,fg_color=background_colors[0])
 
@@ -65,6 +67,6 @@ def update_container_colors(app, background_colors, font_colors, font_bold, font
     if hasattr(app, "main_box"):
         app.main_box.configure(bg_color=app_background,fg_color=app_background)
 
-    updata_left_box_container_colors(app, background_colors, font_colors, font_bold, font_light)
-    updata_right_box_container_colors(app, background_colors, font_colors, font_bold, font_light)
-
+    update_left_box_container_colors(app, background_colors, font_colors, font_bold, font_light)
+    update_right_box_container_colors(app, background_colors, font_colors, font_bold, font_light)
+    update_logo_box_container_colors(app,background_colors)

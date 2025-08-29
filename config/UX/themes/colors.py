@@ -8,6 +8,8 @@ milkish_white_relative = "#B7BBB3"
 grayish_blue = "#D2D5DD"
 whiteish_blue = "#b8bacf"
 light_blackish = "#333630"
+shady_gray = "#848781"
+
 
 #? background colors purple
 light_purple = "#999ac6"
@@ -63,6 +65,7 @@ light_purple_entry = "#7B7C9F"
 blackish_mint_entry = "#27332E"
 purple_entry = "#232630"
 dexter_blood_entry = "#5B0D18"
+light_white_entry = "#5D5F5B"
 
 
 #? about list: 0-background 0-container color 1- container darker color 2-container shadow 3-container shadow relative  
@@ -92,8 +95,8 @@ def light_theme():
     app_background = milkish_white
     background_colors = [
         milkish_white_relative,
-        light_blackish,
-        ligh_blackish_entry,
+        shady_gray,
+        light_white_entry,
         accept_button_light,
         white
     ]
